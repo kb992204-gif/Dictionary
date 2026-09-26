@@ -1,27 +1,11 @@
-# Dictionary - Basic Text Translator
-def translate_text(text, source_language, target_language):
-    print("Translation started...")
-    print(f"From: {source_language}")
-    print(f"To: {target_language}")
-    print(f"Text: {text}")
+import requests
+from PIL import Image
+from io import BytesIO
 
-    # Basic example
-    translations = {
-        "hello": "hi",
-        "thank you": "dhanyavaad",
-        "good morning": "suprabhaat"
-    }
+url = "https://dummyimage.com/600x400/ffffff/000000.png?text=Hello+World"
 
-    result = translations.get(text.lower(), "Translation not available")
+response = requests.get(url)
 
-    return result
+image = Image.open(BytesIO(response.content))
 
-# Get input from the user
-text = input("Enter text: ")
-source_language = input("Enter source language: ")
-target_language = input("Enter target language: ")
-
-# Translate
-result = translate_text(text, source_language, target_language)
-
-print("Translated text:", result)
+print(image)
