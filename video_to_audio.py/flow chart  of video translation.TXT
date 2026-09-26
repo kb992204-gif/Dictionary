@@ -1,0 +1,12 @@
+#Flow chart of video translation
+ Video
+   ↓
+ Extract audio
+   ↓
+ Speech-to-Text
+   ↓
+ Extracted text
+   ↓
+ Translation
+   ↓
+ Translated subtitles
